@@ -1,0 +1,11 @@
+services:
+  pytorch:
+    image: pytorch/pytorch
+    command: ["tail", "-f", "/dev/null"]
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]              
