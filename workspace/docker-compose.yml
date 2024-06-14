@@ -2,10 +2,12 @@ services:
   pytorch:
     image: pytorch/pytorch
     command: ["tail", "-f", "/dev/null"]
+    #volumes:
+    #  - C:/Users/ferje/Workspace/Plate-Recognition:/workspace
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
               count: 1
-              capabilities: [gpu]              
+              capabilities: [gpu]        
